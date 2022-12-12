@@ -6,8 +6,6 @@ Using a Code First Entity Framework, I worked with my team members to develop a 
 
 Featured below are some of my front end and back end code snippets that showcase the developmental process and functionality of this web application. My subset of tasks focused on rental capabilities for a theater company, creating a database of objects for rentable items (rooms and equipment).
 
-[add info about styling about page; CSS; screenshot of gif?]
-
 # MVC
 ## Model
 In order to easily create the CRUD functions I needed, I started by building a model that I could then build the functionality and database from (Code First). Entity Framework made this task relatively straightforward. I had a parent class that two other classes inherited from.
@@ -58,7 +56,8 @@ public class Rental
 ```
 
 ## Controller
-After building my model and creating the initial CRUD functions provided by the Entity Framework, I then began to add logic so that those functions would operate appropriately. Much of the challenge for me came from finding a means to connect the model fields from my classes into one database entry, and having it register as either a rental, rental equipment, or a rental room. Below is how the post method of the create function was built.
+After building my model and creating the initial CRUD functions provided by the Entity Framework, I then began to add logic so that those functions would operate according too the project specifications. Much of the challenge for me came from connecting the model fields from my classes into one database entry, and having it register as either a rental, rental equipment, or a rental room. Below is how the post method of the create and edit functions were built.
+
 ### Create
 I used if statements to check the type of rental and assign the appropriate variables.
 
@@ -117,10 +116,8 @@ bool? ChokingHazard, bool? SuffocationHazard, int? RoomNumber, int? SquareFootag
 
 if (PurchasePrice > 0)
 {
-
     RentalEquipment rentalEquipment = new RentalEquipment();
     rentalEquipment.RentalId = rental.RentalId;
-
     rentalEquipment.RentalName = rental.RentalName;
     rentalEquipment.RentalCost = rental.RentalCost;
     rentalEquipment.FlawsAndDamages = rental.FlawsAndDamages;
@@ -137,7 +134,6 @@ if (RoomNumber > 0)
 {
     RentalRoom rentalRoom = new RentalRoom();
     rentalRoom.RentalId = rental.RentalId;
-
     rentalRoom.RentalName = rental.RentalName;
     rentalRoom.RentalCost = rental.RentalCost;
     rentalRoom.FlawsAndDamages = rental.FlawsAndDamages;
