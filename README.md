@@ -63,7 +63,8 @@ After building my model and creating the initial CRUD functions provided by the 
 I used if statements to check the type of rental and assign the appropriate variables.
 
 ```
-public ActionResult Create([Bind(Include = "RentalId,RentalName,RentalCost,FlawsAndDamages,ChokingHazard,SuffocationHazard,PurchasePrice,RoomNumber,SquareFootage,MaxOccupancy")] Rental rental, RentalEquipment rentalEquipment, RentalRoom rentalRoom)
+public ActionResult Create([Bind(Include = "RentalId,RentalName,RentalCost,FlawsAndDamages,ChokingHazard,SuffocationHazard,PurchasePrice,
+RoomNumber,SquareFootage,MaxOccupancy")] Rental rental, RentalEquipment rentalEquipment, RentalRoom rentalRoom)
 
 if (rentalEquipment.PurchasePrice != null)
 {
@@ -111,7 +112,8 @@ return View(rental);
 ### Edit
 The program's edit function was built slightly differently to better interact with the respective view.
 ```
-public ActionResult Edit([Bind(Include = "RentalId,RentalName,RentalCost,FlawsAndDamages")] Rental rental, int? PurchasePrice, bool? ChokingHazard, bool? SuffocationHazard, int? RoomNumber, int? SquareFootage, int? MaxOccupancy)
+public ActionResult Edit([Bind(Include = "RentalId,RentalName,RentalCost,FlawsAndDamages")] Rental rental, int? PurchasePrice,
+bool? ChokingHazard, bool? SuffocationHazard, int? RoomNumber, int? SquareFootage, int? MaxOccupancy)
 
 if (PurchasePrice > 0)
 {
