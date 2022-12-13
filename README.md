@@ -1,13 +1,13 @@
-## C# Live Project Code Summary
-# Introduction
+# C# Live Project Code Summary
+## Introduction
 During my time studying at The Tech Academy, I was fortunate to complete a two week long Live Project. Much of the purpose of this project was to closely replciate a real-world working environment.
 
 Using a Code First Entity Framework, I worked with my team members to develop a full scale MVC Web Application in C#. Our team used Azure DevOps and Agile methodology to plan and organize our project stories. I became much more familiar with the features of Visual Studio, as well as how to add appropriate functionality in a legacy codebase.
 
 Featured below are some of my front end and back end code snippets that showcase the developmental process and functionality of this web application. My subset of tasks focused on rental capabilities for a theater company, creating a database of objects for rentable items (rooms and equipment).
 
-# MVC
-## Model
+## MVC
+### Model
 In order to easily create the CRUD functions I needed, I started by building a model that I could then build the functionality and database from (Code First). Entity Framework made this task relatively straightforward. I had a parent class that two other classes inherited from.
 
 ```
@@ -55,10 +55,10 @@ public class Rental
     }
 ```
 
-## Controller
+### Controller
 After building my model and creating the initial CRUD functions provided by the Entity Framework, I then began to add logic so that those functions would operate according too the project specifications. Much of the challenge for me came from connecting the model fields from my classes into one database entry, and having it register as either a rental, rental equipment, or a rental room. Below is how the post method of the create and edit functions were built.
 
-### Create
+#### Create
 I used if statements to check the type of rental and assign the appropriate variables.
 
 ```
@@ -108,7 +108,7 @@ if (rentalRoom.RoomNumber == null && rentalEquipment.PurchasePrice == null)
 
 return View(rental);
 ```
-### Edit
+#### Edit
 The program's edit function was built slightly differently to better interact with the respective view.
 ```
 public ActionResult Edit([Bind(Include = "RentalId,RentalName,RentalCost,FlawsAndDamages")] Rental rental, int? PurchasePrice,
@@ -155,11 +155,11 @@ if (ModelState.IsValid)
 return View(rental);
 
 ```
-## View
+### View
 
 A common layout page was implemented in creating the views, keeping the site in a uniform style while navigating the pages. The layout page was a component of the legacy codebase, ensuring cohesive development across all components. I created javascript functions and used an enum to hide and show the available input fields, depending on the type of object being created.
-### Create
-#### Dropdown Selection
+#### Create
+##### Dropdown Selection
 Depending on the enum value chosen, the compatible fields will display:
 
 ```
@@ -168,7 +168,7 @@ Depending on the enum value chosen, the compatible fields will display:
         "Select rental type:"
         )
 ```
-### Edit
+#### Edit
 In order to show compatible fields in the edit view, the program decifers the model type:
 ```
 @if (Model.GetType() == typeof(RentalEquipment))
