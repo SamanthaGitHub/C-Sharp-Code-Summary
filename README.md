@@ -1,4 +1,4 @@
-# C# Live Project Code Summary
+# C# Internship Code Summary
 ## Introduction
 During my internship at Prosper IT Consulting, I worked on a legacy codebase with team members to develop a full scale MVC Web Application in C# using code first .NET Entity Framework. I worked along side a team of other student developers using Azure DevOps and Agile methodology. The project consisted of ten stories during a two-week long sprint with daily standup meetings and weekly code retrospectives. 
 
