@@ -1,6 +1,6 @@
 # C# Live Project Code Summary
 ## Introduction
-During my internship at Prosper IT Consulting, I worked with team members to develop a full scale MVC Web Application in C# using code first .NET Entity Framework. Our team used Azure DevOps and Agile methodology to plan and organize our project stories. I became very familiar with the features of Visual Studio, as well as how to appropriately add functionality to a legacy codebase.
+During my internship at Prosper IT Consulting, I worked on a legacy codebase with team members to develop a full scale MVC Web Application in C# using code first .NET Entity Framework. I worked along side a team of other student developers using Azure DevOps and Agile methodology. The project consisted of ten stories during a two-week long sprint with daily standup meetings and weekly code retrospectives. 
 
 Featured below are some of my front and back end code snippets that showcase the develop process and functionality of this web application. My subset of tasks focused on rental capabilities for the theater company Vertigo, creating a database of rentable items (rooms and equipment) with CRUD functionality.
 
