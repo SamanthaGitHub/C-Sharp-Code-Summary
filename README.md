@@ -1,14 +1,12 @@
 # C# Live Project Code Summary
 ## Introduction
-During my time studying at The Tech Academy, I was fortunate to complete a two week long Live Project. Much of the purpose of this project was to closely replciate a real-world working environment.
+During my internship at Prosper IT Consulting, I worked with team members to develop a full scale MVC Web Application in C# using code first .NET Entity Framework. Our team used Azure DevOps and Agile methodology to plan and organize our project stories. I became very familiar with the features of Visual Studio, as well as how to appropriately add functionality to a legacy codebase.
 
-Using a Code First Entity Framework, I worked with my team members to develop a full scale MVC Web Application in C#. Our team used Azure DevOps and Agile methodology to plan and organize our project stories. I became much more familiar with the features of Visual Studio, as well as how to add appropriate functionality in a legacy codebase.
-
-Featured below are some of my front end and back end code snippets that showcase the developmental process and functionality of this web application. My subset of tasks focused on rental capabilities for a theater company, creating a database of objects for rentable items (rooms and equipment).
+Featured below are some of my front and back end code snippets that showcase the develop process and functionality of this web application. My subset of tasks focused on rental capabilities for the theater company Vertigo, creating a database of rentable items (rooms and equipment) with CRUD functionality.
 
 ## MVC
 ### Model
-In order to easily create the CRUD functions I needed, I started by building a model that I could then build the functionality and database from (Code First). Entity Framework made this task relatively straightforward. I had a parent class that two other classes inherited from.
+In order to easily create CRUD functions, I started by building a model that I could then build the functionality and database from (Code First). Entity Framework made this task relatively straightforward. I had a parent class that two other subclasses inherited from.
 
 ```
 public class Rental
@@ -56,7 +54,7 @@ public class Rental
 ```
 
 ### Controller
-After building my model and creating the initial CRUD functions provided by the Entity Framework, I then began to add logic so that those functions would operate according too the project specifications. Much of the challenge for me came from connecting the model fields from my classes into one database entry, and having it register as either a rental, rental equipment, or a rental room. Below is how the post method of the create and edit functions were built.
+After building my model and creating the initial CRUD functions provided by the Entity Framework, I then began to add logic so that those functions would operate according to the project specifications. Much of the challenge for me came from connecting the model fields from my classes into one database entry, and having it register as either a rental, rental equipment, or a rental room. Below shows how the POST methods of the create and edit functions were coded.
 
 #### Create
 I used if statements to check the type of rental and assign the appropriate variables.
@@ -157,7 +155,7 @@ return View(rental);
 ```
 ### View
 
-A common layout page was implemented in creating the views, keeping the site in a uniform style while navigating the pages. The layout page was a component of the legacy codebase, ensuring cohesive development across all components. I created javascript functions and used an enum to hide and show the available input fields, depending on the type of object being created.
+A base layout template was used to cohesively create views, keeping the site in a uniform style while navigating the pages. The layout template was a component of the legacy codebase, ensuring cohesive development across all components. I created javascript functions that targeted an enumerable class to hide and show the available input fields, depending on the type of object being created.
 #### Create
 ##### Dropdown Selection
 Depending on the enum value chosen, the compatible fields will display:
@@ -180,10 +178,10 @@ else if (Model.GetType() == typeof(RentalRoom))
 
 ## Skills Aquired
 ### <b>MVC</b>
-This project was one my first larger MVC applications. Being able to understand how this framework is built and connecting 'under the hood' is vital to a functioning finished product. The MVC framework aided me in many ways, one of which being the seperation of conerns. When adding in features or designing pages, I was able to focus on a few specific areas of my code, allowing the framework to do the rest.
+This project was one my first larger MVC applications. The capabilities of the MVC structure coupled with that of the .NET Framework and EF is incredible. The MVC framework aided me repeatedly, especially in regards to the seperation of conerns. When adding in features or styling pages, I was able to focus on a few specific areas of my code, allowing the framework to do the rest.
 
 ### <b>Version Control</b>
-Git Version control was used extensively, as all team members worked off of cloned local versions of the same remote repository. I created branches for each of my stories and pushed them to the project manager. When merge conflicts arose, we were able to see exactly where the conflicts were and address them. I also found Git to be a great tool for debugging, as I was able to commit my branch for my project manager to then see and help me figure out problems.
+Git Version control was used extensively, as all team members worked off of cloned local versions of the same remote repository. I created branches for each of my stories and pushed them to the project manager. When merge conflicts arose, we were able to see exactly where the conflicts were and address them. I also found Git to be a great tool for troubleshooting, as I was able to commit my branch for my project manager to then see and help me figure out problems.
 
 ### <b>Troubleshooting</b>
-When running into roadblocks, I frequently searched online for answers. By using various search terms and looking at different search results, I became more adept at finding exactly what I was after. I also learned how useful looking at a variety of answers to a problem is, as I could cherry-pick different aspects I wanted to implement into my code. Using Chrome Developer Tools allowed me to see exactly what my application was doing in the browser, which files were being used, and even some possible errors. Communicating with my project manager was also a great resource I had available, and was able to see how different ideas came together to reach a common goal.
+When running into roadblocks, I frequently researched online for answers. By using various search terms and looking at different search results, I became more adept at finding exactly what I was after. I also learned how useful looking at a variety of answers to a problem is, as I could cherry-pick different aspects of various answers that I could then implement into my code. Using Chrome Developer Tools allowed me to see exactly what my application was doing in the browser, which files were being used, and even some possible errors. Communicating with my project manager was also a great resource I had available, and was able to see how different ideas came together to reach a common goal.
